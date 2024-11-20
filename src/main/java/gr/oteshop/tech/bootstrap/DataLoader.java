@@ -19,6 +19,11 @@ public class DataLoader implements ApplicationRunner {
                 .balance(2000.)
                 .accountHolder("Dora")
                 .build());
+        accountRepository.save(Account
+                .builder()
+                .balance(2000.)
+                .accountHolder("Dimitris")
+                .build());
          accountRepository.save(Account
                 .builder()
                 .balance(1000.)

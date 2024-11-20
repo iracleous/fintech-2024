@@ -1,13 +1,12 @@
 package gr.oteshop.tech.controllers;
 
+import gr.oteshop.tech.models.Account;
 import gr.oteshop.tech.services.AccountService;
 import lombok.AllArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/accounts")
@@ -27,4 +26,15 @@ public class AccountController {
             return ResponseEntity.badRequest().body("Error: " + e.getMessage());
         }
     }
+
+    @GetMapping("{name}")
+    public ResponseEntity<Optional<Account>> getAccount(@PathVariable String name) {
+        return  ResponseEntity.ok(accountService.findUserAccount(name));
+    }
+
+    @GetMapping("/fund/{amount}")
+    public ResponseEntity<Boolean> getAccount(@PathVariable Double amount) {
+        return  ResponseEntity.ok(accountService.existsByBalanceGreaterThan(amount));
+    }
+
 }

@@ -1,7 +1,8 @@
-package gr.oteshop.tech.services;
+package gr.oteshop.tech.services.impl;
 
 import gr.oteshop.tech.models.Mobile;
 import gr.oteshop.tech.repositories.MobileRepository;
+import gr.oteshop.tech.services.MobileService;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
