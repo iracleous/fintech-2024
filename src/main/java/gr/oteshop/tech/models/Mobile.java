@@ -19,3 +19,27 @@ public class Mobile {
     private String color;
     private BigDecimal price;
 }
+
+/*
+{
+    "name":"E37",
+        "brandId":15,
+        "model":"black",
+        "color":"light",
+        "price":300
+}
+
+{
+    "name":"E37",
+        "brand":{
+            "id":15,
+            "name":"Samsung",
+            "description":"xxx"
+        },
+        "model":"black",
+        "color":"light",
+        "price":300
+}
+
+
+*/

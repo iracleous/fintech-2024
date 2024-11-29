@@ -11,7 +11,7 @@ import java.util.Optional;
 
 @Repository
 public interface AccountRepository extends JpaRepository<Account, Long> {
-
+    List<Account> findAccountByAccountHolderEquals(String accountHolder);
     List<Account> findAccountByAccountHolderStartsWith(String accountHolder);
     List<Account> findAccountByAccountHolderStartingWith(String accountHolder);
     List<Account> findAccountByBalanceGreaterThan(Double balance);
