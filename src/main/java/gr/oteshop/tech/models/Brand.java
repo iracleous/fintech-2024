@@ -1,5 +1,6 @@
 package gr.oteshop.tech.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.Data;
 
@@ -16,6 +17,7 @@ public class Brand {
     private String name;
     private String description;
 
+    @JsonIgnore
     @OneToMany(mappedBy = "brand")
     private List<Mobile> mobiles = new ArrayList<>();
 

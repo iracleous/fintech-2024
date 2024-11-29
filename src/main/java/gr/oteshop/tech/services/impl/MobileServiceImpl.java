@@ -16,6 +16,7 @@ private final MobileRepository mobileRepository;
 
     @Override
     public List<Mobile> getMobiles() {
+
         return mobileRepository.findAll();
     }
 
@@ -26,6 +27,15 @@ private final MobileRepository mobileRepository;
 
     @Override
     public Optional<Mobile> createMobile(Mobile mobile) {
+        if (mobile == null) {
+            return Optional.empty();
+        }
+        if (mobile.getName()== null || mobile.getName().isEmpty())  {
+            return Optional.empty();
+        }
+        if (mobile.getName().equals("test")){
+            return Optional.empty();
+        }
         mobileRepository.save(mobile);
         return Optional.of(mobile);
     }
