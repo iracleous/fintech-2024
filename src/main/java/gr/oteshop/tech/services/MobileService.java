@@ -9,4 +9,6 @@ public interface MobileService {
     List<Mobile> getMobiles();
     Optional<Mobile> getMobile(long id);
     Optional<Mobile> createMobile(Mobile mobile);
+
+    List<Mobile> getMobilesByModel(String model);
 }

@@ -24,6 +24,10 @@ public class MobileController {
         return mobileService.getMobile(id);
     }
 
+    @GetMapping("/model")
+public List<Mobile> getMobileModel(@RequestParam("model") String model){
+        return mobileService.getMobilesByModel(model);
+    }
     @PostMapping
     public Optional<Mobile> saveMobile(@RequestBody Mobile mobile){
         return  mobileService.createMobile(mobile);

@@ -18,10 +18,14 @@ private final MobileRepository mobileRepository;
     public List<Mobile> getMobiles() {
 
         return mobileRepository.findAll();
+
+
+
     }
 
     @Override
     public Optional<Mobile> getMobile(long id) {
+
         return mobileRepository.findById(id);
     }
 
@@ -38,5 +42,10 @@ private final MobileRepository mobileRepository;
         }
         mobileRepository.save(mobile);
         return Optional.of(mobile);
+    }
+
+    @Override
+    public List<Mobile> getMobilesByModel(String model) {
+        return  mobileRepository.findMobileByModelContainingIgnoreCase(model);
     }
 }
