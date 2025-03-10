@@ -1,13 +1,13 @@
 package gr.oteshop.tech.models;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.experimental.SuperBuilder;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Getter
@@ -20,4 +20,8 @@ public class Account {
     private Long id;
     private String accountHolder;
     private Double balance;
+
+    @OneToMany(mappedBy = "user")
+    private List<Mobile> mobiles = new ArrayList<>();
+
 }

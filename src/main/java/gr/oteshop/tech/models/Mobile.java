@@ -15,6 +15,10 @@ public class Mobile {
     private String name;
     @ManyToOne
     private Brand brand;
+
+    @ManyToOne
+    private Account user;
+
     private String model;
     private String color;
     private BigDecimal price;
